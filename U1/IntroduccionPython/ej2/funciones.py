@@ -30,8 +30,13 @@ def valores(lista : list[int]):
         ordenada = sorted(lista)
         menor = ordenada[0]
         mayor = ordenada[-1]
-        central = len(ordenada) // 2
+        mid = len(ordenada) // 2
         
+        if len(ordenada) % 2 == 0:
+            central = ordenada[mid-1], ordenada[mid]
+        else:
+            central = ordenada[mid]
+
     return menor, central, mayor 
     
 def unicos_set(lista : list[int]) -> list[int]:
@@ -62,7 +67,7 @@ def unicos_dict1(lista: list[int]) -> list[int]:
 def unicos_dict2(lista : list[int]) -> list[int]:
     return list({x: None for x in lista}.keys())
 
-#3 nuevo
+#3 otra forma que no dimos en clase
 def unicos_dict3(lista : list[int]) -> list[int]:
     return list(dict.fromkeys(lista))
     
