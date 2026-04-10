@@ -21,7 +21,7 @@ def main():
     admin.agregar_automovil(Auto5)
 
     for auto in admin._AutomovilAdmin__lista:
-        print(auto)
+        print(f"{auto}")
 
 if __name__ == "__main__":
     main()

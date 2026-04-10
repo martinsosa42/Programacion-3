@@ -1,10 +1,10 @@
 from Marca import Marca
 class Automovil: 
-    _contador = 0
+    CONTADOR_NUMERO = 0
 
     def __init__(self, dominio:str, marca: Marca,modelo:str,anio:int, kilometros:int,precio:float):
-        Automovil._contador += 1
-        self.numero = Automovil._contador
+        Automovil.CONTADOR_NUMERO += 1
+        self.__numero = Automovil.CONTADOR_NUMERO
         self.dominio = dominio
         self.marca = marca
         self.modelo = modelo
@@ -14,17 +14,11 @@ class Automovil:
 
     @property
     def numero(self):
-        return self._numero
-    
-    @numero.setter
-    def numero(self,numero:int):
-        if not isinstance(numero,int) or numero < 0:
-            raise ValueError(f"Numero invalido: {numero}. El numero debe ser un numero entero. ")
-        self.__numero = int(numero)
+        return self.__numero
     
     @property
     def anio(self):
-        return self._anio
+        return self.__anio
     
     @anio.setter
     def anio(self,anio:int):
@@ -34,7 +28,7 @@ class Automovil:
     
     @property
     def precio(self):
-        return self._precio
+        return self.__precio
     
     @precio.setter
     def precio(self,precio:float):
@@ -44,7 +38,7 @@ class Automovil:
 
     @property
     def kilometros(self):
-        return self._kilometros
+        return self.__kilometros
 
     @kilometros.setter
     def kilometros(self, kilometros:int):
